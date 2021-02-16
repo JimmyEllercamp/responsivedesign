@@ -24,8 +24,8 @@ header p {
     margin: 0 auto;
 }
 
-header .nav {
-    margin-left: 3rem;
+nav a{
+    margin: 3rem;
 }
 
 .media-queries-section p {

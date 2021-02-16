@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+body {
+    font-size: 20px;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+td {
+    width: 50%;
+    border: solid 1px black;
+    padding: 2rem;
+}
+
+header p {
+    width: 75%;
+    margin: 0 auto;
+}
+
+header .nav {
+    margin-left: 3rem;
+}
+
+.media-queries-section p {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.image-container {
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.image-container img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

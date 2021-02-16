@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    <title>Responsive Design</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+      <header>
+          <nav><a href="./index.html">Home</a><a href="./Flex.html">Flex</a></nav>
+            <h1>Responsive Website Design Methods</h1>
+            <h3>When making a website, it's important to make it as easy as possible to see.</h3>
+            <p>Technology is changing all the time, with new screen types constantly being released. This makes designing a webpage difficult to keep neat and easy to view. The way to make it as easy as plossible for us as developers is to make our websites responsive. This page is a simple reference sheet for methods to make your page responsive easily by swapping the measurement syntax.</p>
+            <br>
+            <p><b>Note also:</b> when using relative sizing, ems and rems should be used to size text and dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, percentages should be used.</p>
+            <br><br>
+      </header>
+    <main>
+      <table>
+            <tr>
+                <th>Element</th>
+                <th>Method</th>
+            </tr>
+            <tr>
+                <td><em>Text Based</em></td>
+                <td>There are two methods for text based elements. em, and rem. Both size the text based on relative sizes. But where em only sizes text relative to its parent element, rem sizes based on the base font size of the browser. This is usually 16px. Using rem gives the page a more consistant style.</td>
+            </tr>
+            <tr>
+                <td><em>Non text html elements (relative to parent elements)</em></td>
+                <td>Percentages (eg. width: 50%) are used to set the content of the child element in relation to the parent element. Note that you must first set the size of the parent element, or the child could appear out of whack. If you want to set width to 100%, first manage the padding, margin and border, or swap to border-box model.</td>
+            </tr>
+            <tr>
+                <td><em>Padding & Margin</em></td>
+                <td>When using percentages to set padding and margin, you are styling them in relation to the <em>width</em> of the parent element, as opposed to the box dimensions (aka 50% margin-left will move the element halfway across the element to the right, instead of making the margin half of the parent's margin).</td>
+            </tr>
+            <tr>
+                <td><em>Width: Minimum & Maximum</em></td>
+                <td>Sometimes when an element gets too large or small, it loses its integrity and become hard or impossible to view. In this case, min-width and max-width can ensure they are kept in presentable dimensions in order to be viewed. This is done with px to ensure hard limits.</td>
+            </tr>
+            <tr>
+                <td><em>Height: Minimum & Maximum</em></td>
+                <td>Setting the min-height and max-height will ensure a minimum and maximum height for an elements box. If an element is too large for its box, this can cause overflow. One method to handle any overflow is the <em>overflow: scroll</em> rule in CSS.</td>
+            </tr>
+            <tr>
+                <td><em>Scaling Videos & Images</em></td>
+                <td>Images and videos should be sized by their containers. A very common method of styling images is as follows: 
+                    <br><br>
+                    .container {<br>
+                    width: 50%;<br>
+                    height: 200px;<br>
+                    overflow: hidden;<br>
+                  }<br>
+                   <br>
+                  .container img {<br>
+                    max-width: 100%;<br>
+                    height: auto;<br>
+                    display: block;<br>
+                  }<br><br>
+                This will ensure the images are scaled and are viewable, displaying as block level, as opposed to the default image display of inline-block. If the image or video overflows vertically from its container, swap the height to 100% and width to auto.</td>
+            </tr>
+            <tr>
+                <td><em>Scaling Background Images</em></td>
+                <td>Background images are scaled with the following code: <br>
+                <br>
+                body {<br>
+                    background-image: url('#');<br>
+                    background-repeat: no-repeat;<br>
+                    background-position: center;<br>
+                    background-size: cover;<br>
+                  }</td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <div class="media-queries-section">
+        <h3>Media Queries</h3>
+        <p>Another way we can make our pages responsive is through Media Queries. They target different screen types, and we can style our CSS dependent on the parameters of the screen viewing the page.</p>
+        <br>
+        <table>
+            <tr>
+                <th><b>Query</b></th>
+                <th><b>Method</b></th>
+            </tr>
+            <tr>
+                <td><em>@media only screen and (min-width : 480px) (max-width, min/max height)</em></td>
+                <td>@media instructs the browser to parse a query, and specifying min/max width/height, we can establish rulesets within the queries that will only be applied if the conditions are met. These queries can be chained by adding another <b><em>and</em></b> condition after the last.</td>
+            </tr>
+            <tr>
+                <td><em>DPI (Dots per inch) & DPC (Dots per centimetre) | and (min-resolution : 300dpi)</em></td>
+                <td>Another property we can target with queries is screen resolution. This is helpful because you don't want to force a screen to display images or content that is too high a resolution, forcing a slow loading time or poor visibility. By targeting with min-resolution and max-resolution, we can allow images to only be loaded if the conditions are met.</td>
+            </tr>
+            <tr>
+                <td><em>Comma Separated List</em></td>
+                <td>If you only need one parameter to be met, then you can separate the queries with a comma. For example, if a screen has a min-width of 480px, or, is set to orientation: landscape, then if either one is true, the query ruleset will be applied. <b>Note:</b> you do not use the <b><em>and</em></b> operator for this.</td>
+            </tr>
+            <tr>
+                <td><em>Breakpoints</em></td>
+                <td>There are many different screen sizes and resolutions, and the list will grow every year. Because of this, it is easiest to simply resize the browser to find where the code "breaks" or becomes warped, and this is how you should target your queries. Below is a list of common screen parameters to use as reference.</td>
+            </tr>
+        </table>
+        <div class="image-container">
+            <img src="./resources/screen-sizes.png">
+        </div>
+        </div>
+    </main>
+</body>
